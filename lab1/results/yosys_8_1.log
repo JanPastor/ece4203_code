@@ -41,8 +41,8 @@ Removed 0 unused modules.
 Cleaned up 0 empty switches.
 
 3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
-Marked 1 switch rules as full_case in process $proc$rtl/registered_adder.v:51$7 in module registered_adder.
-Marked 1 switch rules as full_case in process $proc$rtl/registered_adder.v:75$11 in module registered_adder.
+Marked 1 switch rules as full_case in process $proc$rtl/registered_adder.v:52$7 in module registered_adder.
+Marked 1 switch rules as full_case in process $proc$rtl/registered_adder.v:76$11 in module registered_adder.
 Removed a total of 0 dead cases.
 
 3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
@@ -52,46 +52,45 @@ Promoted 0 assignments to connections.
 3.2.4. Executing PROC_INIT pass (extract init attributes).
 
 3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst_n in `\registered_adder.$proc$rtl/registered_adder.v:52$7'.
+Found async reset \rst_n in `\registered_adder.$proc$rtl/registered_adder.v:76$11'.
 
 3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
 Converted 0 switches.
-<suppressed ~2 debug messages>
 
 3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\registered_adder.$proc$rtl/registered_adder.v:51$7'.
+Creating decoders for process `\registered_adder.$proc$rtl/registered_adder.v:52$7'.
      1/3: $0\cin_r[0:0]
      2/3: $0\b_r[7:0]
      3/3: $0\a_r[7:0]
-Creating decoders for process `\registered_adder.$proc$rtl/registered_adder.v:75$11'.
+Creating decoders for process `\registered_adder.$proc$rtl/registered_adder.v:76$11'.
      1/2: $0\cout[0:0]
      2/2: $0\sum[7:0]
 
 3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 3.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\registered_adder.\a_r' using process `\registered_adder.$proc$rtl/registered_adder.v:51$7'.
-  created $dff cell `$procdff$28' with positive edge clock.
-Creating register for signal `\registered_adder.\b_r' using process `\registered_adder.$proc$rtl/registered_adder.v:51$7'.
-  created $dff cell `$procdff$29' with positive edge clock.
-Creating register for signal `\registered_adder.\cin_r' using process `\registered_adder.$proc$rtl/registered_adder.v:51$7'.
-  created $dff cell `$procdff$30' with positive edge clock.
-Creating register for signal `\registered_adder.\sum' using process `\registered_adder.$proc$rtl/registered_adder.v:75$11'.
-  created $dff cell `$procdff$31' with positive edge clock.
-Creating register for signal `\registered_adder.\cout' using process `\registered_adder.$proc$rtl/registered_adder.v:75$11'.
-  created $dff cell `$procdff$32' with positive edge clock.
+Creating register for signal `\registered_adder.\a_r' using process `\registered_adder.$proc$rtl/registered_adder.v:52$7'.
+  created $adff cell `$procdff$17' with positive edge clock and positive level reset.
+Creating register for signal `\registered_adder.\b_r' using process `\registered_adder.$proc$rtl/registered_adder.v:52$7'.
+  created $adff cell `$procdff$22' with positive edge clock and positive level reset.
+Creating register for signal `\registered_adder.\cin_r' using process `\registered_adder.$proc$rtl/registered_adder.v:52$7'.
+  created $adff cell `$procdff$27' with positive edge clock and positive level reset.
+Creating register for signal `\registered_adder.\sum' using process `\registered_adder.$proc$rtl/registered_adder.v:76$11'.
+  created $adff cell `$procdff$32' with positive edge clock and positive level reset.
+Creating register for signal `\registered_adder.\cout' using process `\registered_adder.$proc$rtl/registered_adder.v:76$11'.
+  created $adff cell `$procdff$37' with positive edge clock and positive level reset.
 
 3.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Found and cleaned up 1 empty switch in `\registered_adder.$proc$rtl/registered_adder.v:51$7'.
-Removing empty process `registered_adder.$proc$rtl/registered_adder.v:51$7'.
-Found and cleaned up 1 empty switch in `\registered_adder.$proc$rtl/registered_adder.v:75$11'.
-Removing empty process `registered_adder.$proc$rtl/registered_adder.v:75$11'.
-Cleaned up 2 empty switches.
+Removing empty process `registered_adder.$proc$rtl/registered_adder.v:52$7'.
+Removing empty process `registered_adder.$proc$rtl/registered_adder.v:76$11'.
+Cleaned up 0 empty switches.
 
 3.2.12. Executing OPT_EXPR pass (perform const folding).
 Optimizing module registered_adder.
-<suppressed ~5 debug messages>
+<suppressed ~10 debug messages>
 
 3.3. Executing FLATTEN pass (flatten design).
 
@@ -100,8 +99,8 @@ Optimizing module registered_adder.
 
 3.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \registered_adder..
-Removed 2 unused cells and 13 unused wires.
-<suppressed ~3 debug messages>
+Removed 7 unused cells and 18 unused wires.
+<suppressed ~8 debug messages>
 
 3.6. Executing CHECK pass (checking for obvious problems).
 Checking module registered_adder...
@@ -119,10 +118,8 @@ Removed a total of 0 cells.
 3.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \registered_adder..
   Creating internal representation of mux trees.
-  Evaluating internal representation of mux trees.
-  Analyzing evaluation results.
+  No muxes found in this module.
 Removed 0 multiplexer ports.
-<suppressed ~10 debug messages>
 
 3.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \registered_adder.
@@ -173,10 +170,8 @@ Removed a total of 0 cells.
 3.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \registered_adder..
   Creating internal representation of mux trees.
-  Evaluating internal representation of mux trees.
-  Analyzing evaluation results.
+  No muxes found in this module.
 Removed 0 multiplexer ports.
-<suppressed ~10 debug messages>
 
 3.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
   Optimizing cells in module \registered_adder.
@@ -187,50 +182,19 @@ Finding identical cells in module `\registered_adder'.
 Removed a total of 0 cells.
 
 3.9.6. Executing OPT_DFF pass (perform DFF optimizations).
-Adding SRST signal on $procdff$32 ($dff) from module registered_adder (D = \result [8], Q = \cout, rval = 1'0).
-Adding SRST signal on $procdff$31 ($dff) from module registered_adder (D = \result [7:0], Q = \sum, rval = 8'00000000).
-Adding SRST signal on $procdff$30 ($dff) from module registered_adder (D = \cin, Q = \cin_r, rval = 1'0).
-Adding SRST signal on $procdff$29 ($dff) from module registered_adder (D = \b, Q = \b_r, rval = 8'00000000).
-Adding SRST signal on $procdff$28 ($dff) from module registered_adder (D = \a, Q = \a_r, rval = 8'00000000).
 
 3.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \registered_adder..
-Removed 5 unused cells and 5 unused wires.
-<suppressed ~6 debug messages>
 
 3.9.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module registered_adder.
 
-3.9.9. Rerunning OPT passes. (Maybe there is more to do..)
-
-3.9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \registered_adder..
-  Creating internal representation of mux trees.
-  No muxes found in this module.
-Removed 0 multiplexer ports.
-
-3.9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \registered_adder.
-Performed a total of 0 changes.
-
-3.9.12. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\registered_adder'.
-Removed a total of 0 cells.
-
-3.9.13. Executing OPT_DFF pass (perform DFF optimizations).
-
-3.9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \registered_adder..
-
-3.9.15. Executing OPT_EXPR pass (perform const folding).
-Optimizing module registered_adder.
-
-3.9.16. Finished fast OPT passes. (There is nothing left to do.)
+3.9.9. Finished fast OPT passes. (There is nothing left to do.)
 
 3.10. Executing WREDUCE pass (reducing word size of cells).
-Removed top 1 bits (of 9) from port A of cell registered_adder.$add$rtl/registered_adder.v:69$9 ($add).
-Removed top 1 bits (of 9) from port B of cell registered_adder.$add$rtl/registered_adder.v:69$9 ($add).
-Removed top 8 bits (of 9) from port B of cell registered_adder.$add$rtl/registered_adder.v:69$10 ($add).
+Removed top 1 bits (of 9) from port A of cell registered_adder.$add$rtl/registered_adder.v:70$9 ($add).
+Removed top 1 bits (of 9) from port B of cell registered_adder.$add$rtl/registered_adder.v:70$9 ($add).
+Removed top 8 bits (of 9) from port B of cell registered_adder.$add$rtl/registered_adder.v:70$10 ($add).
 
 3.11. Executing PEEPOPT pass (run peephole optimizers).
 
@@ -239,11 +203,11 @@ Finding unused cells or wires in module \registered_adder..
 
 3.13. Executing ALUMACC pass (create $alu and $macc cells).
 Extracting $alu and $macc cells in module registered_adder:
-  creating $macc model for $add$rtl/registered_adder.v:69$10 ($add).
-  creating $macc model for $add$rtl/registered_adder.v:69$9 ($add).
-  merging $macc model for $add$rtl/registered_adder.v:69$9 into $add$rtl/registered_adder.v:69$10.
-  creating $alu model for $macc $add$rtl/registered_adder.v:69$10.
-  creating $alu cell for $add$rtl/registered_adder.v:69$10: $auto$alumacc.cc:512:replace_alu$38
+  creating $macc model for $add$rtl/registered_adder.v:70$10 ($add).
+  creating $macc model for $add$rtl/registered_adder.v:70$9 ($add).
+  merging $macc model for $add$rtl/registered_adder.v:70$9 into $add$rtl/registered_adder.v:70$10.
+  creating $alu model for $macc $add$rtl/registered_adder.v:70$10.
+  creating $alu cell for $add$rtl/registered_adder.v:70$10: $auto$alumacc.cc:512:replace_alu$38
   created 1 $alu and 0 $macc cells.
 
 3.14. Executing SHARE pass (SAT-based resource sharing).
@@ -425,7 +389,7 @@ Successfully finished Verilog frontend.
 
 3.21.2. Continuing TECHMAP pass.
 Using template $paramod$4ccbe221165818e15f326ddee3d1183c7924e12f\_90_alu for cells of type $alu.
-Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $adff.
 Using extmapper simplemap for cells of type $xor.
 Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001001 for cells of type $fa.
 Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001001 for cells of type $lcu.
@@ -467,7 +431,7 @@ ABC: UC Berkeley, ABC 1.01 (compiled 0 0)
 ABC: abc 01> empty
 ABC: abc 01> source <abc-temp-dir>/abc.script
 ABC: + read_blif <abc-temp-dir>/input.blif 
-ABC: + read_library /tmp/yosys-abc-v99kjS/stdcells.genlib 
+ABC: + read_library /tmp/yosys-abc-XM0igJ/stdcells.genlib 
 ABC: + strash 
 ABC: + dretime 
 ABC: + map 
@@ -526,15 +490,15 @@ Removed 0 unused modules.
        97 wire bits
        11 public wires
        54 public wire bits
-        7 ports
-       28 port bits
+        8 ports
+       37 port bits
        78 cells
        12   $_ANDNOT_
         4   $_AND_
+       26   $_DFF_PN0_
         4   $_NAND_
         6   $_NOR_
        10   $_OR_
-       26   $_SDFF_PN0_
        11   $_XNOR_
         5   $_XOR_
 
@@ -577,20 +541,20 @@ Found and reported 0 problems.
 4.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
 <suppressed ~24 debug messages>
 Mapping DFF cells in module `\registered_adder':
-  mapped 26 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_1 cells.
+  mapped 26 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
 
 5. Executing ABC pass (technology mapping using ABC).
 
 5.1. Extracting gate netlist of module `\registered_adder' to `<abc-temp-dir>/input.blif'..
 
 5.1.1. Executed ABC.
-Extracted 78 gates and 114 wires to a netlist network with 35 inputs and 26 outputs.
+Extracted 52 gates and 69 wires to a netlist network with 17 inputs and 9 outputs.
 Running ABC script: <abc-temp-dir>/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled 0 0)
 ABC: abc 01> empty
 ABC: abc 01> source <abc-temp-dir>/abc.script
 ABC: + read_blif <abc-temp-dir>/input.blif 
-ABC: + read_lib -w /OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: + read_lib -w /workspaces/ece4203_code/lab1/../pdk/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
 ABC: Parsing finished successfully.  Parsing time =     0.09 sec
 ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
 ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
@@ -686,43 +650,47 @@ ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
-ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/OpenROAD-flow-scripts/flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.14 sec
-ABC: Memory =   19.81 MB. Time =     0.14 sec
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/workspaces/ece4203_code/lab1/../pdk/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.14 sec
+ABC: Memory =   19.85 MB. Time =     0.14 sec
 ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
-ABC: + strash 
-ABC: + &get -n 
-ABC: + &fraig -x 
-ABC: + &put 
-ABC: + scorr 
-ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
-ABC: + dc2 
-ABC: + dretime 
-ABC: + strash 
-ABC: + &get -n 
-ABC: + &dch -f 
-ABC: + &nf 
-ABC: + &put 
+ABC: + source /tmp/abc_4984.abc 
+ABC: Warning: The network was strashed and balanced before mapping.
+ABC: Cannot meet the target required times (480.00). Continue anyway.
+ABC: WireLoad = "none"  Gates =     61 ( 13.1 %)   Cap =  6.5 ff ( 17.2 %)   Area =      440.42 ( 59.0 %)   Delay =   738.64 ps  ( 23.0 %)               
 ABC: + write_blif <abc-temp-dir>/output.blif 
 ABC: 
 
 5.1.2. Re-integrating ABC results.
-ABC RESULTS:   sky130_fd_sc_hd__a211o_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        8
-ABC RESULTS:   sky130_fd_sc_hd__a311o_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:       25
-ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_4 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_4 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso0n_1 cells:        1
 ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso1p_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:        2
-ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        5
-ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:        6
-ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__nand2_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__nor2_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_8 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:        1
 ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        5
-ABC RESULTS:        internal signals:       53
-ABC RESULTS:           input signals:       35
-ABC RESULTS:          output signals:       26
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__xor2_4 cells:        1
+ABC RESULTS:        internal signals:       43
+ABC RESULTS:           input signals:       17
+ABC RESULTS:          output signals:        9
 Removing temp directory.
 Removing global temp directory.
 
@@ -733,31 +701,44 @@ Removing global temp directory.
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      181        - wires
-      224        - wire bits
+      132        - wires
+      175        - wire bits
        11        - public wires
        54        - public wire bits
-        7        - ports
-       28        - port bits
-       92  909.622 cells
-        1    8.758   sky130_fd_sc_hd__a211o_1
-        8   40.038   sky130_fd_sc_hd__a21oi_1
-        1    10.01   sky130_fd_sc_hd__a311o_1
-        1    6.256   sky130_fd_sc_hd__a31oi_1
-       25    156.4   sky130_fd_sc_hd__and2_0
-        2    7.507   sky130_fd_sc_hd__clkinv_1
-       26  520.499   sky130_fd_sc_hd__dfxtp_1
+        8        - ports
+       37        - port bits
+       87 1.09E+03 cells
+        2   37.536   sky130_fd_sc_hd__a21boi_4
+        4   20.019   sky130_fd_sc_hd__a21oi_1
+        1    8.758   sky130_fd_sc_hd__a21oi_2
+        1    6.256   sky130_fd_sc_hd__and2_0
+        2   17.517   sky130_fd_sc_hd__and2_4
+        7   26.275   sky130_fd_sc_hd__clkinv_1
+       26  650.624   sky130_fd_sc_hd__dfrtp_1
+        1    3.754   sky130_fd_sc_hd__inv_2
+        1    6.256   sky130_fd_sc_hd__lpflow_inputiso0n_1
         1    6.256   sky130_fd_sc_hd__lpflow_inputiso1p_1
-        2   20.019   sky130_fd_sc_hd__maj3_1
-        5   18.768   sky130_fd_sc_hd__nand2_1
-        6   22.522   sky130_fd_sc_hd__nor2_1
-        1    5.005   sky130_fd_sc_hd__nor3_1
-        7   35.034   sky130_fd_sc_hd__o21ai_0
+        1    6.256   sky130_fd_sc_hd__lpflow_isobufsrc_1
+        8   30.029   sky130_fd_sc_hd__nand2_1
+        1   11.261   sky130_fd_sc_hd__nand2_4
+        1    6.256   sky130_fd_sc_hd__nand4_1
+        1   12.512   sky130_fd_sc_hd__nand4_2
+       10   37.536   sky130_fd_sc_hd__nor2_1
+        1   11.261   sky130_fd_sc_hd__nor2_4
+        1   20.019   sky130_fd_sc_hd__nor2_8
+        1    7.507   sky130_fd_sc_hd__o211ai_1
+        1   12.512   sky130_fd_sc_hd__o211ai_2
+        3   15.014   sky130_fd_sc_hd__o21ai_0
+        1   16.266   sky130_fd_sc_hd__o21ai_4
+        1    7.507   sky130_fd_sc_hd__o21bai_1
+        1   18.768   sky130_fd_sc_hd__o21bai_4
+        1    6.256   sky130_fd_sc_hd__o22ai_1
         1    8.758   sky130_fd_sc_hd__xnor2_1
-        5   43.792   sky130_fd_sc_hd__xor2_1
+        6    52.55   sky130_fd_sc_hd__xor2_1
+        1   27.526   sky130_fd_sc_hd__xor2_4
 
-   Chip area for module '\registered_adder': 909.622400
-     of which used for sequential elements: 520.499200 (57.22%)
+   Chip area for module '\registered_adder': 1091.046400
+     of which used for sequential elements: 650.624000 (59.63%)
 
 7. Executing Verilog backend.
 
@@ -766,6 +747,6 @@ Removing global temp directory.
 7.2. Executing DEMUXMAP pass.
 Dumping module `\registered_adder'.
 
-End of script. Logfile hash: f40b525a13, CPU: user 0.18s system 0.04s, MEM: 48.50 MB peak
+End of script. Logfile hash: 4634217dc9, CPU: user 0.19s system 0.04s, MEM: 48.25 MB peak
 Yosys 0.60 (git sha1 UNKNOWN, g++ 11.4.0-1ubuntu1~22.04.2 -fPIC -O3)
-Time spent: 57% 2x abc (0 sec), 14% 2x stat (0 sec), ...
+Time spent: 54% 2x abc (0 sec), 15% 1x dfflibmap (0 sec), ...

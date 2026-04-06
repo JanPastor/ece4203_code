@@ -1,0 +1,78 @@
+OpenSTA 2.7.0  Copyright (c) 2025, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Startpoint: _138_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _145_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+     Cap     Slew    Delay     Time   Description
+---------------------------------------------------------------------------
+            0.000    0.000    0.000   clock clk (rise edge)
+                     0.000    0.000   clock network delay (ideal)
+            0.000    0.000    0.000 ^ _138_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.009    0.097    0.342    0.342 ^ _138_/Q (sky130_fd_sc_hd__dfrtp_1)
+                                      cin_r (net)
+            0.097    0.000    0.342 ^ _089_/A (sky130_fd_sc_hd__inv_2)
+   0.005    0.028    0.040    0.382 v _089_/Y (sky130_fd_sc_hd__inv_2)
+                                      _046_ (net)
+            0.028    0.000    0.382 v _090_/A1 (sky130_fd_sc_hd__o21ai_2)
+   0.011    0.174    0.178    0.561 ^ _090_/Y (sky130_fd_sc_hd__o21ai_2)
+                                      _047_ (net)
+            0.174    0.000    0.561 ^ _108_/B1 (sky130_fd_sc_hd__o21ai_2)
+   0.004    0.055    0.078    0.638 v _108_/Y (sky130_fd_sc_hd__o21ai_2)
+                                      _062_ (net)
+            0.055    0.000    0.638 v _110_/A1 (sky130_fd_sc_hd__a21oi_2)
+   0.005    0.104    0.127    0.765 ^ _110_/Y (sky130_fd_sc_hd__a21oi_2)
+                                      _064_ (net)
+            0.104    0.000    0.765 ^ _112_/B (sky130_fd_sc_hd__nor2_1)
+   0.006    0.064    0.064    0.830 v _112_/Y (sky130_fd_sc_hd__nor2_1)
+                                      _066_ (net)
+            0.064    0.000    0.830 v _125_/A3 (sky130_fd_sc_hd__o311ai_0)
+   0.002    0.255    0.251    1.081 ^ _125_/Y (sky130_fd_sc_hd__o311ai_0)
+                                      _083_ (net)
+            0.255    0.000    1.081 ^ _145_/D (sky130_fd_sc_hd__dfrtp_1)
+                              1.081   data arrival time
+
+            0.000    1.200    1.200   clock clk (rise edge)
+                     0.000    1.200   clock network delay (ideal)
+                     0.000    1.200   clock reconvergence pessimism
+                              1.200 ^ _145_/CLK (sky130_fd_sc_hd__dfrtp_1)
+                    -0.116    1.084   library setup time
+                              1.084   data required time
+---------------------------------------------------------------------------
+                              1.084   data required time
+                             -1.081   data arrival time
+---------------------------------------------------------------------------
+                              0.004   slack (MET)
+
+
+worst slack max 0.00
+wns max 0.00
+tns max 0.00
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             7.53e-04   2.40e-05   2.33e-10   7.77e-04  88.6%
+Combinational          4.56e-05   5.45e-05   9.19e-11   1.00e-04  11.4%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  7.98e-04   7.86e-05   3.25e-10   8.77e-04 100.0%
+                          91.0%       9.0%       0.0%
+max slew
+
+Pin                                    Limit    Slew   Slack
+------------------------------------------------------------
+_125_/Y                                 1.48    0.26    1.23 (MET)
+
+max capacitance
+
+Pin                                    Limit     Cap   Slack
+------------------------------------------------------------
+_125_/Y                                 0.03    0.00    0.03 (MET)
+
