@@ -1,0 +1,117 @@
+OpenSTA 2.7.0  Copyright (c) 2025, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Startpoint: _1683_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1747_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+     Cap     Slew    Delay     Time   Description
+---------------------------------------------------------------------------
+            0.000    0.000    0.000   clock clk (rise edge)
+                     0.000    0.000   clock network delay (ideal)
+            0.000    0.000    0.000 ^ _1683_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.007    0.060    0.361    0.361 v _1683_/Q (sky130_fd_sc_hd__dfrtp_1)
+                                      cin_r (net)
+            0.060    0.000    0.361 v _1055_/C (sky130_fd_sc_hd__maj3_1)
+   0.007    0.090    0.380    0.741 v _1055_/X (sky130_fd_sc_hd__maj3_1)
+                                      _0555_ (net)
+            0.090    0.000    0.741 v _1056_/B (sky130_fd_sc_hd__maj3_1)
+   0.008    0.095    0.376    1.117 v _1056_/X (sky130_fd_sc_hd__maj3_1)
+                                      _0556_ (net)
+            0.095    0.000    1.117 v _1061_/A (sky130_fd_sc_hd__and3_1)
+   0.002    0.035    0.157    1.273 v _1061_/X (sky130_fd_sc_hd__and3_1)
+                                      _0561_ (net)
+            0.035    0.000    1.273 v _1063_/B (sky130_fd_sc_hd__nor2_1)
+   0.008    0.161    0.140    1.413 ^ _1063_/Y (sky130_fd_sc_hd__nor2_1)
+                                      _0563_ (net)
+            0.161    0.000    1.413 ^ _1064_/A (sky130_fd_sc_hd__clkinv_1)
+   0.007    0.078    0.113    1.526 v _1064_/Y (sky130_fd_sc_hd__clkinv_1)
+                                      _0564_ (net)
+            0.078    0.000    1.526 v _1077_/A (sky130_fd_sc_hd__nand4_1)
+   0.002    0.066    0.076    1.601 ^ _1077_/Y (sky130_fd_sc_hd__nand4_1)
+                                      _0577_ (net)
+            0.066    0.000    1.601 ^ _1084_/A (sky130_fd_sc_hd__nand2_1)
+   0.012    0.090    0.097    1.698 v _1084_/Y (sky130_fd_sc_hd__nand2_1)
+                                      _0584_ (net)
+            0.090    0.000    1.698 v _1085_/A (sky130_fd_sc_hd__clkinv_1)
+   0.005    0.045    0.068    1.767 ^ _1085_/Y (sky130_fd_sc_hd__clkinv_1)
+                                      _0585_ (net)
+            0.045    0.000    1.767 ^ _1119_/B (sky130_fd_sc_hd__nor2_1)
+   0.002    0.027    0.034    1.800 v _1119_/Y (sky130_fd_sc_hd__nor2_1)
+                                      _0619_ (net)
+            0.027    0.000    1.800 v _1132_/B (sky130_fd_sc_hd__nor2_1)
+   0.010    0.192    0.159    1.959 ^ _1132_/Y (sky130_fd_sc_hd__nor2_1)
+                                      _0632_ (net)
+            0.192    0.000    1.959 ^ _1133_/A (sky130_fd_sc_hd__clkinv_1)
+   0.008    0.095    0.134    2.093 v _1133_/Y (sky130_fd_sc_hd__clkinv_1)
+                                      _0633_ (net)
+            0.095    0.000    2.093 v _1227_/A1 (sky130_fd_sc_hd__a41oi_1)
+   0.018    0.474    0.400    2.494 ^ _1227_/Y (sky130_fd_sc_hd__a41oi_1)
+                                      _0727_ (net)
+            0.474    0.000    2.494 ^ _1518_/A2 (sky130_fd_sc_hd__o21bai_1)
+   0.013    0.150    0.202    2.696 v _1518_/Y (sky130_fd_sc_hd__o21bai_1)
+                                      _0969_ (net)
+            0.150    0.000    2.696 v _1538_/A1 (sky130_fd_sc_hd__a21boi_0)
+   0.010    0.351    0.340    3.036 ^ _1538_/Y (sky130_fd_sc_hd__a21boi_0)
+                                      _0981_ (net)
+            0.351    0.000    3.036 ^ _1546_/A2 (sky130_fd_sc_hd__o21ai_0)
+   0.009    0.142    0.199    3.235 v _1546_/Y (sky130_fd_sc_hd__o21ai_0)
+                                      _0985_ (net)
+            0.142    0.000    3.235 v _1550_/A (sky130_fd_sc_hd__nand3_1)
+   0.002    0.061    0.098    3.333 ^ _1550_/Y (sky130_fd_sc_hd__nand3_1)
+                                      _0987_ (net)
+            0.061    0.000    3.333 ^ _1551_/A (sky130_fd_sc_hd__nand2_1)
+   0.006    0.065    0.068    3.402 v _1551_/Y (sky130_fd_sc_hd__nand2_1)
+                                      _0988_ (net)
+            0.065    0.000    3.402 v _1553_/A1 (sky130_fd_sc_hd__a21oi_1)
+   0.005    0.143    0.152    3.553 ^ _1553_/Y (sky130_fd_sc_hd__a21oi_1)
+                                      _0989_ (net)
+            0.143    0.000    3.553 ^ _1554_/B (sky130_fd_sc_hd__xnor2_1)
+   0.002    0.102    0.124    3.678 ^ _1554_/Y (sky130_fd_sc_hd__xnor2_1)
+                                      _1049_ (net)
+            0.102    0.000    3.678 ^ _1747_/D (sky130_fd_sc_hd__dfrtp_1)
+                              3.678   data arrival time
+
+            0.000    4.000    4.000   clock clk (rise edge)
+                     0.000    4.000   clock network delay (ideal)
+                     0.000    4.000   clock reconvergence pessimism
+                              4.000 ^ _1747_/CLK (sky130_fd_sc_hd__dfrtp_1)
+                    -0.080    3.920   library setup time
+                              3.920   data required time
+---------------------------------------------------------------------------
+                              3.920   data required time
+                             -3.678   data arrival time
+---------------------------------------------------------------------------
+                              0.242   slack (MET)
+
+
+worst slack max 0.24
+wns max 0.00
+tns max 0.00
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             2.19e-03   5.57e-05   2.26e-09   2.25e-03  87.0%
+Combinational          1.44e-04   1.91e-04   1.04e-09   3.34e-04  13.0%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  2.33e-03   2.46e-04   3.30e-09   2.58e-03 100.0%
+                          90.5%       9.5%       0.0%
+max slew
+
+Pin                                    Limit    Slew   Slack
+------------------------------------------------------------
+_1227_/Y                                1.48    0.47    1.01 (MET)
+
+max capacitance
+
+Pin                                    Limit     Cap   Slack
+------------------------------------------------------------
+_1403_/Y                                0.02    0.00    0.02 (MET)
+

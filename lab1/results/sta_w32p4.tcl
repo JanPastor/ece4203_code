@@ -1,0 +1,44 @@
+# ECE4203 Lab 1 — OpenSTA script
+# Tokens ../pdk/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib, 32, 4 substituted by Makefile.
+#
+# This script:
+#   1. Reads the mapped netlist and sky130hd liberty
+#   2. Applies the SDC clock / IO constraints
+#   3. Reports setup timing (critical path, WNS, TNS)
+#   4. Writes an SDF file for back-annotated gate-level simulation
+
+read_liberty ../pdk/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog results/netlist_32_4.v
+link_design registered_adder
+
+read_sdc results/constraints_w32p4.sdc
+set_false_path -from [get_ports rst_n]
+
+# ---- Setup (max-delay) timing report ----
+# full_clock_expanded shows the launch and capture clock edges
+# explicitly — helps students see how the period budget is consumed.
+report_checks \
+    -path_delay max \
+    -format full_clock_expanded \
+    -fields {slew cap input_pin net} \
+    -digits 3
+
+# ---- WNS / TNS summary ----
+# The Makefile summary target greps "^wns" and "^tns" from this log.
+report_worst_slack -max
+report_wns
+report_tns
+set_power_activity -global -activity 0.2 -duty 0.5
+set_power_activity -clock clk -activity 1.0 -duty 0.5
+report_power
+
+# ---- DRC checks ----
+report_check_types -max_slew -max_cap -max_fanout
+
+# ---- Write SDF ----
+# Produces a Standard Delay Format file from liberty cell timing data.
+# No placement parasitics (interconnect delay = 0) — this is a
+# synthesis-level SDF, which is appropriate before P&R.
+# Students annotate this into iverilog gate-level simulation to see
+# actual gate delays on the GTKWave waveform.
+write_sdf results/netlist_32_4.sdf

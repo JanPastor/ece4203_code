@@ -18,11 +18,11 @@ Parsing Verilog input from `rtl/registered_adder.v' to AST representation.
 verilog frontend filename rtl/registered_adder.v
 Generating RTLIL representation for module `\registered_adder'.
 Successfully finished Verilog frontend.
-Parameter \WIDTH = 8
+Parameter \WIDTH = 64
 
 2. Executing AST frontend in derive mode using pre-parsed AST for module `\registered_adder'.
-Parameter \WIDTH = 8
-Generating RTLIL representation for module `$paramod\registered_adder\WIDTH=32'00000000000000000000000000001000'.
+Parameter \WIDTH = 64
+Generating RTLIL representation for module `$paramod\registered_adder\WIDTH=32'00000000000000000000000001000000'.
 
 3. Executing SYNTH pass.
 
@@ -61,11 +61,11 @@ Converted 0 switches.
 3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
 Creating decoders for process `\registered_adder.$proc$rtl/registered_adder.v:52$7'.
      1/3: $0\cin_r[0:0]
-     2/3: $0\b_r[7:0]
-     3/3: $0\a_r[7:0]
+     2/3: $0\b_r[63:0]
+     3/3: $0\a_r[63:0]
 Creating decoders for process `\registered_adder.$proc$rtl/registered_adder.v:76$11'.
      1/2: $0\cout[0:0]
-     2/2: $0\sum[7:0]
+     2/2: $0\sum[63:0]
 
 3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
@@ -192,9 +192,9 @@ Optimizing module registered_adder.
 3.9.9. Finished fast OPT passes. (There is nothing left to do.)
 
 3.10. Executing WREDUCE pass (reducing word size of cells).
-Removed top 1 bits (of 9) from port A of cell registered_adder.$add$rtl/registered_adder.v:70$9 ($add).
-Removed top 1 bits (of 9) from port B of cell registered_adder.$add$rtl/registered_adder.v:70$9 ($add).
-Removed top 8 bits (of 9) from port B of cell registered_adder.$add$rtl/registered_adder.v:70$10 ($add).
+Removed top 1 bits (of 65) from port A of cell registered_adder.$add$rtl/registered_adder.v:70$9 ($add).
+Removed top 1 bits (of 65) from port B of cell registered_adder.$add$rtl/registered_adder.v:70$9 ($add).
+Removed top 64 bits (of 65) from port B of cell registered_adder.$add$rtl/registered_adder.v:70$10 ($add).
 
 3.11. Executing PEEPOPT pass (run peephole optimizers).
 
@@ -388,24 +388,24 @@ Generating RTLIL representation for module `\$input_port'.
 Successfully finished Verilog frontend.
 
 3.21.2. Continuing TECHMAP pass.
-Using template $paramod$4ccbe221165818e15f326ddee3d1183c7924e12f\_90_alu for cells of type $alu.
+Using template $paramod$f880710029b6e56fdc272865cd0a3010fe99cd13\_90_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $adff.
 Using extmapper simplemap for cells of type $xor.
-Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001001 for cells of type $fa.
-Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000001001 for cells of type $lcu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000001000001 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000001000001 for cells of type $lcu.
 Using extmapper simplemap for cells of type $pos.
 Using extmapper simplemap for cells of type $mux.
 Using extmapper simplemap for cells of type $not.
 Using extmapper simplemap for cells of type $or.
 Using extmapper simplemap for cells of type $and.
 No more expansions possible.
-<suppressed ~269 debug messages>
+<suppressed ~596 debug messages>
 
 3.22. Executing OPT pass (performing simple optimizations).
 
 3.22.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module registered_adder.
-<suppressed ~43 debug messages>
+<suppressed ~267 debug messages>
 
 3.22.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\registered_adder'.
@@ -415,8 +415,8 @@ Removed a total of 0 cells.
 
 3.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \registered_adder..
-Removed 8 unused cells and 39 unused wires.
-<suppressed ~9 debug messages>
+Removed 64 unused cells and 39 unused wires.
+<suppressed ~65 debug messages>
 
 3.22.5. Finished fast OPT passes.
 
@@ -425,13 +425,13 @@ Removed 8 unused cells and 39 unused wires.
 3.23.1. Extracting gate netlist of module `\registered_adder' to `<abc-temp-dir>/input.blif'..
 
 3.23.1.1. Executed ABC.
-Extracted 52 gates and 69 wires to a netlist network with 17 inputs and 9 outputs.
+Extracted 491 gates and 620 wires to a netlist network with 129 inputs and 65 outputs.
 Running ABC script: <abc-temp-dir>/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled 0 0)
 ABC: abc 01> empty
 ABC: abc 01> source <abc-temp-dir>/abc.script
 ABC: + read_blif <abc-temp-dir>/input.blif 
-ABC: + read_library /tmp/yosys-abc-Ncc7WB/stdcells.genlib 
+ABC: + read_library /tmp/yosys-abc-FO1cgB/stdcells.genlib 
 ABC: + strash 
 ABC: + dretime 
 ABC: + map 
@@ -439,16 +439,17 @@ ABC: + write_blif <abc-temp-dir>/output.blif
 ABC: 
 
 3.23.1.2. Re-integrating ABC results.
-ABC RESULTS:               AND cells:        4
-ABC RESULTS:            ANDNOT cells:       12
-ABC RESULTS:              NAND cells:        4
-ABC RESULTS:               NOR cells:        6
-ABC RESULTS:                OR cells:       10
-ABC RESULTS:              XNOR cells:       11
-ABC RESULTS:               XOR cells:        5
-ABC RESULTS:        internal signals:       43
-ABC RESULTS:           input signals:       17
-ABC RESULTS:          output signals:        9
+ABC RESULTS:               AND cells:       26
+ABC RESULTS:            ANDNOT cells:      183
+ABC RESULTS:              NAND cells:       63
+ABC RESULTS:               NOR cells:       75
+ABC RESULTS:                OR cells:        7
+ABC RESULTS:             ORNOT cells:        9
+ABC RESULTS:              XNOR cells:       56
+ABC RESULTS:               XOR cells:       72
+ABC RESULTS:        internal signals:      426
+ABC RESULTS:           input signals:      129
+ABC RESULTS:          output signals:       65
 Removing temp directory.
 Removing global temp directory.
 
@@ -465,7 +466,7 @@ Removed a total of 0 cells.
 
 3.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \registered_adder..
-Removed 0 unused cells and 49 unused wires.
+Removed 0 unused cells and 432 unused wires.
 <suppressed ~1 debug messages>
 
 3.24.5. Finished fast OPT passes.
@@ -486,21 +487,22 @@ Removed 0 unused modules.
 
         +----------Local Count, excluding submodules.
         | 
-       54 wires
-       97 wire bits
+      437 wires
+      816 wire bits
        11 public wires
-       54 public wire bits
+      390 public wire bits
         8 ports
-       37 port bits
-       78 cells
-       12   $_ANDNOT_
-        4   $_AND_
-       26   $_DFF_PN0_
-        4   $_NAND_
-        6   $_NOR_
-       10   $_OR_
-       11   $_XNOR_
-        5   $_XOR_
+      261 port bits
+      685 cells
+      183   $_ANDNOT_
+       26   $_AND_
+      194   $_DFF_PN0_
+       63   $_NAND_
+       75   $_NOR_
+        9   $_ORNOT_
+        7   $_OR_
+       56   $_XNOR_
+       72   $_XOR_
 
 3.27. Executing CHECK pass (checking for obvious problems).
 Checking module registered_adder...
@@ -541,14 +543,14 @@ Found and reported 0 problems.
 4.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
 <suppressed ~24 debug messages>
 Mapping DFF cells in module `\registered_adder':
-  mapped 26 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
+  mapped 194 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_1 cells.
 
 5. Executing ABC pass (technology mapping using ABC).
 
 5.1. Extracting gate netlist of module `\registered_adder' to `<abc-temp-dir>/input.blif'..
 
 5.1.1. Executed ABC.
-Extracted 52 gates and 69 wires to a netlist network with 17 inputs and 9 outputs.
+Extracted 491 gates and 620 wires to a netlist network with 129 inputs and 65 outputs.
 Running ABC script: <abc-temp-dir>/abc.script
 ABC: UC Berkeley, ABC 1.01 (compiled 0 0)
 ABC: abc 01> empty
@@ -653,44 +655,64 @@ ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4
 ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/workspaces/ece4203_code/lab1/../pdk/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.13 sec
 ABC: Memory =   19.85 MB. Time =     0.13 sec
 ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
-ABC: + source /tmp/abc_2851.abc 
+ABC: + source /tmp/abc_2906.abc 
 ABC: Warning: The network was strashed and balanced before mapping.
 ABC: Cannot meet the target required times (480.00). Continue anyway.
-ABC: WireLoad = "none"  Gates =     61 ( 13.1 %)   Cap =  6.5 ff ( 17.2 %)   Area =      440.42 ( 59.0 %)   Delay =   738.64 ps  ( 23.0 %)               
+ABC: WireLoad = "none"  Gates =    515 ( 13.8 %)   Cap =  5.1 ff (  8.2 %)   Area =     2931.56 ( 71.5 %)   Delay =  1713.30 ps  ( 17.7 %)               
 ABC: + write_blif <abc-temp-dir>/output.blif 
 ABC: 
 
 5.1.2. Re-integrating ABC results.
-ABC RESULTS:   sky130_fd_sc_hd__a21boi_4 cells:        2
-ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        4
-ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__and2_4 cells:        2
-ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        7
-ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso0n_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso1p_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        8
-ABC RESULTS:   sky130_fd_sc_hd__nand2_4 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       10
-ABC RESULTS:   sky130_fd_sc_hd__nor2_4 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nor2_8 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:       37
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_4 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_4 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:       68
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso0n_1 cells:       22
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__maj3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:       73
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:      109
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__nor2_4 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor2_8 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        2
 ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        3
-ABC RESULTS:   sky130_fd_sc_hd__o21ai_4 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:       22
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_4 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:       10
 ABC RESULTS:   sky130_fd_sc_hd__o21bai_4 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_2 cells:        1
 ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        6
-ABC RESULTS:   sky130_fd_sc_hd__xor2_4 cells:        1
-ABC RESULTS:        internal signals:       43
-ABC RESULTS:           input signals:       17
-ABC RESULTS:          output signals:        9
+ABC RESULTS:   sky130_fd_sc_hd__o311ai_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_0 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:       56
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:        1
+ABC RESULTS:        internal signals:      426
+ABC RESULTS:           input signals:      129
+ABC RESULTS:          output signals:       65
 Removing temp directory.
 Removing global temp directory.
 
@@ -701,44 +723,64 @@ Removing global temp directory.
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      132        - wires
-      175        - wire bits
+     1081        - wires
+     1460        - wire bits
        11        - public wires
-       54        - public wire bits
+      390        - public wire bits
         8        - ports
-       37        - port bits
-       87 1.09E+03 cells
-        2   37.536   sky130_fd_sc_hd__a21boi_4
-        4   20.019   sky130_fd_sc_hd__a21oi_1
-        1    8.758   sky130_fd_sc_hd__a21oi_2
-        1    6.256   sky130_fd_sc_hd__and2_0
-        2   17.517   sky130_fd_sc_hd__and2_4
-        7   26.275   sky130_fd_sc_hd__clkinv_1
-       26  650.624   sky130_fd_sc_hd__dfrtp_1
-        1    3.754   sky130_fd_sc_hd__inv_2
-        1    6.256   sky130_fd_sc_hd__lpflow_inputiso0n_1
-        1    6.256   sky130_fd_sc_hd__lpflow_inputiso1p_1
-        1    6.256   sky130_fd_sc_hd__lpflow_isobufsrc_1
-        8   30.029   sky130_fd_sc_hd__nand2_1
-        1   11.261   sky130_fd_sc_hd__nand2_4
-        1    6.256   sky130_fd_sc_hd__nand4_1
-        1   12.512   sky130_fd_sc_hd__nand4_2
-       10   37.536   sky130_fd_sc_hd__nor2_1
-        1   11.261   sky130_fd_sc_hd__nor2_4
-        1   20.019   sky130_fd_sc_hd__nor2_8
-        1    7.507   sky130_fd_sc_hd__o211ai_1
+      261        - port bits
+      709 7.79E+03 cells
+        3   22.522   sky130_fd_sc_hd__a211oi_1
+        1    7.507   sky130_fd_sc_hd__a21boi_0
+        2   15.014   sky130_fd_sc_hd__a21boi_1
+        1   11.261   sky130_fd_sc_hd__a21boi_2
+        1   18.768   sky130_fd_sc_hd__a21boi_4
+        3   22.522   sky130_fd_sc_hd__a21o_1
+       37  185.178   sky130_fd_sc_hd__a21oi_1
+        3   26.275   sky130_fd_sc_hd__a21oi_2
+        3   48.797   sky130_fd_sc_hd__a21oi_4
+        1    8.758   sky130_fd_sc_hd__a221oi_1
+        5    31.28   sky130_fd_sc_hd__a31oi_1
+        1   12.512   sky130_fd_sc_hd__a31oi_2
+        3   26.275   sky130_fd_sc_hd__and2_4
+        2   12.512   sky130_fd_sc_hd__and3_1
+       68  255.245   sky130_fd_sc_hd__clkinv_1
+      194 4.85E+03   sky130_fd_sc_hd__dfrtp_1
+        3   11.261   sky130_fd_sc_hd__inv_2
+       22  137.632   sky130_fd_sc_hd__lpflow_inputiso0n_1
+        2   12.512   sky130_fd_sc_hd__lpflow_isobufsrc_1
+        5   50.048   sky130_fd_sc_hd__maj3_1
+        1   11.261   sky130_fd_sc_hd__maj3_2
+       73  274.013   sky130_fd_sc_hd__nand2_1
+        2   12.512   sky130_fd_sc_hd__nand2_2
+        8   40.038   sky130_fd_sc_hd__nand3_1
+        5    31.28   sky130_fd_sc_hd__nand4_1
+      109  409.142   sky130_fd_sc_hd__nor2_1
+        6   37.536   sky130_fd_sc_hd__nor2_2
+        3   33.782   sky130_fd_sc_hd__nor2_4
+        2   40.038   sky130_fd_sc_hd__nor2_8
+        5   25.024   sky130_fd_sc_hd__nor3_1
+        1    6.256   sky130_fd_sc_hd__nor4_1
+        2   15.014   sky130_fd_sc_hd__o211ai_1
         1   12.512   sky130_fd_sc_hd__o211ai_2
-        3   15.014   sky130_fd_sc_hd__o21ai_0
-        1   16.266   sky130_fd_sc_hd__o21ai_4
-        1    7.507   sky130_fd_sc_hd__o21bai_1
+       22  110.106   sky130_fd_sc_hd__o21ai_0
+        6   30.029   sky130_fd_sc_hd__o21ai_1
+        4   35.034   sky130_fd_sc_hd__o21ai_2
+        3   48.797   sky130_fd_sc_hd__o21ai_4
+       10   75.072   sky130_fd_sc_hd__o21bai_1
         1   18.768   sky130_fd_sc_hd__o21bai_4
+        3   26.275   sky130_fd_sc_hd__o221ai_1
+        1   15.014   sky130_fd_sc_hd__o221ai_2
         1    6.256   sky130_fd_sc_hd__o22ai_1
-        1    8.758   sky130_fd_sc_hd__xnor2_1
-        6    52.55   sky130_fd_sc_hd__xor2_1
-        1   27.526   sky130_fd_sc_hd__xor2_4
+        1    8.758   sky130_fd_sc_hd__o311ai_0
+        1    7.507   sky130_fd_sc_hd__o31ai_1
+        2   12.512   sky130_fd_sc_hd__or2_0
+       19   166.41   sky130_fd_sc_hd__xnor2_1
+       56   490.47   sky130_fd_sc_hd__xor2_1
+        1   16.266   sky130_fd_sc_hd__xor2_2
 
-   Chip area for module '\registered_adder': 1091.046400
-     of which used for sequential elements: 650.624000 (59.63%)
+   Chip area for module '\registered_adder': 7786.217600
+     of which used for sequential elements: 4854.656000 (62.35%)
 
 7. Executing Verilog backend.
 
@@ -747,6 +789,6 @@ Removing global temp directory.
 7.2. Executing DEMUXMAP pass.
 Dumping module `\registered_adder'.
 
-End of script. Logfile hash: 983a2a95cf, CPU: user 0.20s system 0.05s, MEM: 47.75 MB peak
+End of script. Logfile hash: ae2f33c305, CPU: user 0.29s system 0.03s, MEM: 49.75 MB peak
 Yosys 0.60 (git sha1 UNKNOWN, g++ 11.4.0-1ubuntu1~22.04.2 -fPIC -O3)
-Time spent: 51% 2x abc (0 sec), 15% 1x dfflibmap (0 sec), ...
+Time spent: 51% 2x abc (0 sec), 10% 2x stat (0 sec), ...

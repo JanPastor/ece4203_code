@@ -431,7 +431,7 @@ ABC: UC Berkeley, ABC 1.01 (compiled 0 0)
 ABC: abc 01> empty
 ABC: abc 01> source <abc-temp-dir>/abc.script
 ABC: + read_blif <abc-temp-dir>/input.blif 
-ABC: + read_library /tmp/yosys-abc-Ncc7WB/stdcells.genlib 
+ABC: + read_library /tmp/yosys-abc-cA8x5o/stdcells.genlib 
 ABC: + strash 
 ABC: + dretime 
 ABC: + map 
@@ -650,44 +650,30 @@ ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
-ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/workspaces/ece4203_code/lab1/../pdk/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.13 sec
-ABC: Memory =   19.85 MB. Time =     0.13 sec
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/workspaces/ece4203_code/lab1/../pdk/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use; 0 with 2 outputs; 0 with 3+ outputs).  Time =     0.14 sec
+ABC: Memory =   19.85 MB. Time =     0.14 sec
 ABC: Warning: Detected 9 multi-output cells (for example, "sky130_fd_sc_hd__fa_1").
-ABC: + source /tmp/abc_2851.abc 
+ABC: + source /tmp/abc_2869.abc 
 ABC: Warning: The network was strashed and balanced before mapping.
-ABC: Cannot meet the target required times (480.00). Continue anyway.
-ABC: WireLoad = "none"  Gates =     61 ( 13.1 %)   Cap =  6.5 ff ( 17.2 %)   Area =      440.42 ( 59.0 %)   Delay =   738.64 ps  ( 23.0 %)               
+ABC: Current delay (1619.07 ps) does not exceed the target delay (15480.00 ps). Upsizing is not performed.
+ABC: WireLoad = "none"  Gates =     51 ( 13.7 %)   Cap =  4.4 ff (  3.8 %)   Area =      274.01 ( 82.4 %)   Delay =  1590.07 ps  ( 17.6 %)               
 ABC: + write_blif <abc-temp-dir>/output.blif 
 ABC: 
 
 5.1.2. Re-integrating ABC results.
-ABC RESULTS:   sky130_fd_sc_hd__a21boi_4 cells:        2
 ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        4
-ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        1
 ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__and2_4 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:        1
 ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        7
-ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso0n_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso1p_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:        2
 ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:        8
-ABC RESULTS:   sky130_fd_sc_hd__nand2_4 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       10
-ABC RESULTS:   sky130_fd_sc_hd__nor2_4 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__nor2_8 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        3
-ABC RESULTS:   sky130_fd_sc_hd__o21ai_4 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o21bai_4 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:        1
-ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:        4
 ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        6
-ABC RESULTS:   sky130_fd_sc_hd__xor2_4 cells:        1
 ABC RESULTS:        internal signals:       43
 ABC RESULTS:           input signals:       17
 ABC RESULTS:          output signals:        9
@@ -701,44 +687,30 @@ Removing global temp directory.
         +----------Local Count, excluding submodules.
         |        +-Local Area, excluding submodules.
         |        | 
-      132        - wires
-      175        - wire bits
+      122        - wires
+      165        - wire bits
        11        - public wires
        54        - public wire bits
         8        - ports
        37        - port bits
-       87 1.09E+03 cells
-        2   37.536   sky130_fd_sc_hd__a21boi_4
+       77  924.637 cells
         4   20.019   sky130_fd_sc_hd__a21oi_1
-        1    8.758   sky130_fd_sc_hd__a21oi_2
         1    6.256   sky130_fd_sc_hd__and2_0
-        2   17.517   sky130_fd_sc_hd__and2_4
+        1    6.256   sky130_fd_sc_hd__and3_1
         7   26.275   sky130_fd_sc_hd__clkinv_1
        26  650.624   sky130_fd_sc_hd__dfrtp_1
-        1    3.754   sky130_fd_sc_hd__inv_2
-        1    6.256   sky130_fd_sc_hd__lpflow_inputiso0n_1
-        1    6.256   sky130_fd_sc_hd__lpflow_inputiso1p_1
-        1    6.256   sky130_fd_sc_hd__lpflow_isobufsrc_1
+        2   20.019   sky130_fd_sc_hd__maj3_1
         8   30.029   sky130_fd_sc_hd__nand2_1
-        1   11.261   sky130_fd_sc_hd__nand2_4
-        1    6.256   sky130_fd_sc_hd__nand4_1
-        1   12.512   sky130_fd_sc_hd__nand4_2
-       10   37.536   sky130_fd_sc_hd__nor2_1
-        1   11.261   sky130_fd_sc_hd__nor2_4
-        1   20.019   sky130_fd_sc_hd__nor2_8
-        1    7.507   sky130_fd_sc_hd__o211ai_1
-        1   12.512   sky130_fd_sc_hd__o211ai_2
-        3   15.014   sky130_fd_sc_hd__o21ai_0
-        1   16.266   sky130_fd_sc_hd__o21ai_4
-        1    7.507   sky130_fd_sc_hd__o21bai_1
-        1   18.768   sky130_fd_sc_hd__o21bai_4
-        1    6.256   sky130_fd_sc_hd__o22ai_1
-        1    8.758   sky130_fd_sc_hd__xnor2_1
+        1    5.005   sky130_fd_sc_hd__nand3_1
+       13   48.797   sky130_fd_sc_hd__nor2_1
+        1    5.005   sky130_fd_sc_hd__nor3_1
+        2    10.01   sky130_fd_sc_hd__o21ai_0
+        1    8.758   sky130_fd_sc_hd__o221ai_1
+        4   35.034   sky130_fd_sc_hd__xnor2_1
         6    52.55   sky130_fd_sc_hd__xor2_1
-        1   27.526   sky130_fd_sc_hd__xor2_4
 
-   Chip area for module '\registered_adder': 1091.046400
-     of which used for sequential elements: 650.624000 (59.63%)
+   Chip area for module '\registered_adder': 924.636800
+     of which used for sequential elements: 650.624000 (70.37%)
 
 7. Executing Verilog backend.
 
@@ -747,6 +719,6 @@ Removing global temp directory.
 7.2. Executing DEMUXMAP pass.
 Dumping module `\registered_adder'.
 
-End of script. Logfile hash: 983a2a95cf, CPU: user 0.20s system 0.05s, MEM: 47.75 MB peak
+End of script. Logfile hash: 7fe9bef454, CPU: user 0.17s system 0.04s, MEM: 48.38 MB peak
 Yosys 0.60 (git sha1 UNKNOWN, g++ 11.4.0-1ubuntu1~22.04.2 -fPIC -O3)
-Time spent: 51% 2x abc (0 sec), 15% 1x dfflibmap (0 sec), ...
+Time spent: 55% 2x abc (0 sec), 15% 1x dfflibmap (0 sec), ...

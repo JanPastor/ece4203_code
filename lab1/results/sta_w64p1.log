@@ -1,0 +1,96 @@
+OpenSTA 2.7.0  Copyright (c) 2025, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Startpoint: _1652_ (rising edge-triggered flip-flop clocked by clk)
+Endpoint: _1777_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+     Cap     Slew    Delay     Time   Description
+---------------------------------------------------------------------------
+            0.000    0.000    0.000   clock clk (rise edge)
+                     0.000    0.000   clock network delay (ideal)
+            0.000    0.000    0.000 ^ _1652_/CLK (sky130_fd_sc_hd__dfrtp_1)
+   0.011    0.079    0.382    0.382 v _1652_/Q (sky130_fd_sc_hd__dfrtp_1)
+                                      b_r[3] (net)
+            0.079    0.000    0.382 v _1077_/A (sky130_fd_sc_hd__xor2_2)
+   0.012    0.192    0.221    0.603 ^ _1077_/X (sky130_fd_sc_hd__xor2_2)
+                                      _0562_ (net)
+            0.192    0.000    0.603 ^ _1081_/A (sky130_fd_sc_hd__nand2_1)
+   0.011    0.105    0.132    0.734 v _1081_/Y (sky130_fd_sc_hd__nand2_1)
+                                      _0566_ (net)
+            0.105    0.000    0.734 v _1086_/A1 (sky130_fd_sc_hd__o21ai_4)
+   0.018    0.184    0.220    0.954 ^ _1086_/Y (sky130_fd_sc_hd__o21ai_4)
+                                      _0571_ (net)
+            0.184    0.000    0.954 ^ _1107_/A1 (sky130_fd_sc_hd__a21oi_4)
+   0.018    0.077    0.100    1.055 v _1107_/Y (sky130_fd_sc_hd__a21oi_4)
+                                      _0592_ (net)
+            0.077    0.000    1.055 v _1146_/A2 (sky130_fd_sc_hd__o21ai_4)
+   0.025    0.229    0.219    1.274 ^ _1146_/Y (sky130_fd_sc_hd__o21ai_4)
+                                      _0631_ (net)
+            0.229    0.000    1.274 ^ _1227_/A1 (sky130_fd_sc_hd__a21oi_4)
+   0.020    0.088    0.112    1.386 v _1227_/Y (sky130_fd_sc_hd__a21oi_4)
+                                      _0712_ (net)
+            0.088    0.000    1.386 v _1541_/A2 (sky130_fd_sc_hd__o21bai_4)
+   0.023    0.200    0.198    1.584 ^ _1541_/Y (sky130_fd_sc_hd__o21bai_4)
+                                      _0977_ (net)
+            0.200    0.000    1.584 ^ _1560_/A1 (sky130_fd_sc_hd__a21boi_4)
+   0.018    0.080    0.101    1.686 v _1560_/Y (sky130_fd_sc_hd__a21boi_4)
+                                      _0988_ (net)
+            0.080    0.000    1.686 v _1568_/A2 (sky130_fd_sc_hd__o21ai_4)
+   0.018    0.183    0.187    1.873 ^ _1568_/Y (sky130_fd_sc_hd__o21ai_4)
+                                      _0992_ (net)
+            0.183    0.000    1.873 ^ _1575_/A1 (sky130_fd_sc_hd__a21oi_4)
+   0.008    0.059    0.080    1.952 v _1575_/Y (sky130_fd_sc_hd__a21oi_4)
+                                      _0997_ (net)
+            0.059    0.000    1.952 v _1577_/A2 (sky130_fd_sc_hd__o211ai_2)
+   0.002    0.108    0.126    2.078 ^ _1577_/Y (sky130_fd_sc_hd__o211ai_2)
+                                      _0998_ (net)
+            0.108    0.000    2.078 ^ _1584_/B (sky130_fd_sc_hd__nand2_1)
+   0.002    0.041    0.058    2.136 v _1584_/Y (sky130_fd_sc_hd__nand2_1)
+                                      _1064_ (net)
+            0.041    0.000    2.136 v _1777_/D (sky130_fd_sc_hd__dfrtp_1)
+                              2.136   data arrival time
+
+            0.000    1.000    1.000   clock clk (rise edge)
+                     0.000    1.000   clock network delay (ideal)
+                     0.000    1.000   clock reconvergence pessimism
+                              1.000 ^ _1777_/CLK (sky130_fd_sc_hd__dfrtp_1)
+                    -0.123    0.877   library setup time
+                              0.877   data required time
+---------------------------------------------------------------------------
+                              0.877   data required time
+                             -2.136   data arrival time
+---------------------------------------------------------------------------
+                             -1.259   slack (VIOLATED)
+
+
+worst slack max -1.26
+wns max -1.26
+tns max -53.87
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             8.76e-03   2.40e-04   2.26e-09   9.00e-03  84.7%
+Combinational          7.06e-04   9.17e-04   1.16e-09   1.62e-03  15.3%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  9.47e-03   1.16e-03   3.42e-09   1.06e-02 100.0%
+                          89.1%      10.9%       0.0%
+max slew
+
+Pin                                    Limit    Slew   Slack
+------------------------------------------------------------
+_1431_/Y                                1.49    0.38    1.11 (MET)
+
+max capacitance
+
+Pin                                    Limit     Cap   Slack
+------------------------------------------------------------
+_1400_/Y                                0.03    0.00    0.03 (MET)
+
