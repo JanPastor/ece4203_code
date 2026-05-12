@@ -1,0 +1,12 @@
+OpenROAD 24Q3-12208-gbbf699543a 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty /workspaces/ece4203_code/openroad_flow/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_db ./results/sky130hd/adder64_pipelined/base/5_route.odb
+source /workspaces/ece4203_code/openroad_flow/platforms/sky130hd/setRC.tcl
+exec cp ./results/sky130hd/adder64_pipelined/base/5_route.odb ./results/sky130hd/adder64_pipelined/base/6_1_fill.odb
+Elapsed time: 0:00.77[h:]min:sec. CPU time: user 0.67 sys 0.10 (99%). Peak memory: 128616KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+6_1_fill                           0            125 9fd651139ff90c9ccd98
