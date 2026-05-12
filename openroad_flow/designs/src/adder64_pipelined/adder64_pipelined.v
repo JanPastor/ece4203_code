@@ -8,11 +8,11 @@ module adder64_pipelined (
     output reg         cout
 );
 
-//  localparam STAGES = 8;
-//  localparam CHUNK = 8;
+//  localparam STAGES = 2;
+//  localparam CHUNK = 32;
 
-  localparam STAGES = 64;
-  localparam CHUNK = 1;
+  localparam STAGES = 2;
+  localparam CHUNK = 32;
 
 
   // -------------------------------------------------------
