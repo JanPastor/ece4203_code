@@ -11,8 +11,8 @@ module adder64_pipelined (
 //  localparam STAGES = 2;
 //  localparam CHUNK = 32;
 
-  localparam STAGES = 32;
-  localparam CHUNK = 2;
+  localparam STAGES = 64;
+  localparam CHUNK = 1;
 
 
   // -------------------------------------------------------
